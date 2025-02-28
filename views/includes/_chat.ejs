@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/chat.css">
+</head>
+<!-- Chatbot Container -->
+<div class="chatbot-container">
+    <button class="chatbot-toggler">
+        <i class="fas fa-comment-dots"></i>
+        <i class="fas fa-times"></i>
+
+    </button>
+    
+    <div class="chatbot">
+        <div class="chatbot-header">
+            <h3>Assistant Virtuel</h3>
+            <span>En ligne</span>
+        </div>
+        
+        <div class="chatbot-messages"></div>
+        
+        <div class="chatbot-input">
+            <input type="text" placeholder="Tapez votre message...">
+            <button class="send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script >
+    const chatbotToggler = document.querySelector('.chatbot-toggler');
+    const chatbot = document.querySelector('.chatbot');
+    const messagesContainer = document.querySelector('.chatbot-messages');
+    const inputField = document.querySelector('.chatbot-input input');
+    const sendBtn = document.querySelector('.send-btn');
+    
+    // Toggle chatbot
+    chatbotToggler.addEventListener('click', () => {
+        chatbot.classList.toggle('active');
+        chatbotToggler.classList.toggle('active');
+    });
+    
+    // Fonction d'envoi de message
+    function sendMessage() {
+        const message = inputField.value.trim();
+        if (!message) return;
+    
+        // Ajouter message utilisateur
+        addMessage(message, 'user');
+        inputField.value = '';
+        
+        // Simuler réponse du bot
+        setTimeout(() => {
+            const botResponse = generateBotResponse(message);
+            addMessage(botResponse, 'bot');
+        }, 1000);
+    }
+    
+    // générer une réponse simple
+    function generateBotResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        if (lowerMessage.includes('bonjour')) {
+            return "Bonjour ! Comment puis-je vous aider aujourd'hui ?";
+        }
+        
+        if (lowerMessage.includes('employé') || lowerMessage.includes('ajouter')) {
+            return "Pour ajouter un employé, cliquez sur le bouton 'Ajouter' dans la liste des employés.";
+        }
+        
+        if (lowerMessage.includes('modifier') || lowerMessage.includes('éditer')) {
+            return "Pour modifier un employé, sélectionnez-le dans la liste et cliquez sur 'Modifier'.";
+        }
+        
+        if (lowerMessage.includes('supprimer')) {
+            return "Pour supprimer un employé, sélectionnez-le et cliquez sur 'Supprimer'. Attention, cette action est irréversible.";
+        }
+        
+        if (lowerMessage.includes('recherche') || lowerMessage.includes('chercher')) {
+            return "Utilisez la barre de recherche en haut de la liste des employés pour filtrer les résultats.";
+        }
+        
+        if (lowerMessage.includes('erreur')) {
+            return "En cas d'erreur, veuillez rafraîchir la page. Si le problème persiste, contactez l'administrateur.";
+        }
+        
+        if (lowerMessage.includes('contact') || lowerMessage.includes('administrateur')) {
+            return "Vous pouvez contacter l'administrateur à l'adresse admin@entreprise.com ou cliquer sur le bouton 'Contact' du menu pour plus d'informations.";
+        }
+        
+        if (lowerMessage.includes('aide')) {
+            return "Je peux vous aider avec :\n- L'ajout/modification d'employés\n- La suppression\n- La recherche\n- Les problèmes techniques\nDites-moi ce dont vous avez besoin !";
+        }
+        
+        if (lowerMessage.includes('problème')) {
+            return "Veuillez contacter l'administrateur pour signaler ce problème.";
+        }
+        
+        return "Je suis désolé, je n'ai pas compris. Pour plus d'aide, contactez l'administrateur.";
+    }
+    
+    // Ajouter un message au chat
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', `${sender}-message`);
+        messageDiv.textContent = text;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    
+    // Événements
+    sendBtn.addEventListener('click', sendMessage);
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
+    
+    // Message d'accueil initial
+    setTimeout(() => {
+        addMessage("Bonjour ! Je suis votre assistant virtuel. Posez-moi vos questions sur la gestion des employés.", 'bot');
+    }, 1000);
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Employés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+</head>
+<body>  
+        <nav>
+            <div class="user-info">
+                <img id="userLogo" src="/images/5856.jpg" alt="User Logo" class="user-logo">
+                <span id="userNames">Utilisateur</span>
+            </div>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Profil</a></li>
+                <li><a href="/employes"><i class="fas fa-users"></i> Management des employés</a></li>
+
+                <!-- Hide "Ajouter un employé" for non-admins -->
+                <li id="addEmployeeNav"><a href="/employes/ajout"><i class="fas fa-user-plus"></i> Ajouter un employé</a></li>
+
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+
+                
+            </ul>
+        </nav>
+  
+    <script>
+        function logout() {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            window.location.href = "/";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const user = JSON.parse(localStorage.getItem("user"));
+            
+            if (user) {
+                document.getElementById("userNames").innerText = user.name || "Utilisateur";
+
+                const userImage = user.image && user.image !== "" ? `/images/${user.image}` : "/images/5856.jpg";
+                document.getElementById("userLogo").src = userImage;
+
+                if (user.role !== "admin") {
+                    document.getElementById("addEmployeeNav").style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
