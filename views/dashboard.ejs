@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+    <%- include('includes/navBar') %>
+
+    <div class="profile-container">
+        
+
+        <div class="profile-card">
+            <h1>Bienvenue sur votre tableau de bord</h1>
+            <!-- Profile Photo -->
+            <img id="profilePhoto" src="images/5856.jpg" alt="Photo de Profil" class="profile-photo">
+
+            <table class="profile-info">
+                <tr>
+                    <th>Nom Complet :</th>
+                    <td id="userName">Chargement...</td>
+                </tr>
+                <tr>
+                    <th>Email :</th>
+                    <td id="userEmail">Chargement...</td>
+                </tr>
+                <tr>
+                    <th>Rôle :</th>
+                    <td id="userRole">Chargement...</td>
+                </tr>
+            </table>
+
+            <a id="editProfile" href="#" class="btn">
+                <i class="fas fa-edit"></i> Modifier mes informations
+            </a>
+
+            <button onclick="logout()" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </button>
+
+            <p id="errorMessage" class="error-message" style="display: none;">Erreur lors du chargement des informations.</p>
+        </div>
+    </div>
+    <%- include('includes/_chat.ejs') %>
+
+    <script src="/javascripts/auth.js"></script> 
+</body>
+</html>

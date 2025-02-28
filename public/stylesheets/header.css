@@ -1,0 +1,135 @@
+/* ======= Navigation Bar ======= */
+header {
+    background: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: calc(100% - 260px); /* Adjust width according to sidebar */
+    top: 0;
+    left: 260px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ======= Sidebar Navigation ======= */
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 260px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding-top: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ======= User Info (Inside Sidebar, Aligned with UL) ======= */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    margin-left: 30px;
+    width: 100%;
+    justify-content: flex-start; /* Align with nav items */
+}
+
+.user-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.user-logo:hover {
+    transform: scale(1.1);
+}
+
+#userNames {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+}
+
+/* ======= Navigation Links ======= */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 100%;
+    text-align: left;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+    padding: 12px 25px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(7px);
+    color: #fff;
+}
+
+nav a i {
+    font-size: 1.4rem;
+    width: 30px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 80px;
+        padding-top: 20px;
+    }
+
+    header {
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    nav a {
+        justify-content: center;
+        padding: 1rem;
+        font-size: 0;
+    }
+
+    nav a i {
+        font-size: 1.6rem;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #userNames {
+        font-size: 14px;
+    }
+}

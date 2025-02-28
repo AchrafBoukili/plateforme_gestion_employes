@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Employé</title>
+    <link rel="stylesheet" href="/stylesheets/ajouteremploye.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <%- include('includes/navBar.ejs') %>
+
+    <div class="form-container">
+        <h1>Ajouter Employé</h1>
+
+        <!-- Success/Error Message -->
+        <div id="message-container" class="alert" style="display: none;"></div>
+
+        <form id="addEmployeeForm" enctype="multipart/form-data">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" required>
+
+            <label for="city">Ville :</label>
+            <input type="text" id="city" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" required>
+
+            <!-- Role Selection (Only Admins Can Choose) -->
+            <label for="role">Rôle :</label>
+            <select id="role" >
+                <option value="employe">Employé</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <label for="image">Photo de profil :</label>
+            <input type="file" id="imageUpload" accept="image/*">
+            <div class="image-preview">
+                <img id="preview" src="/images/5856.jpg" alt="Image Preview">
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Ajouter Employé
+            </button>
+        </form>
+    </div>
+
+    <script src="/javascripts/addEmployee.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+</head>
+<body>
+    <%- include('includes/navBar') %>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1><i class="fas fa-envelope"></i> Contactez le Développeur</h1>
+            <p>Une question ou un problème ? Écrivez-moi !</p>
+        </div>
+    
+        <form class="contact-form" action="https://api.web3forms.com/submit"  method="POST" id="contactForm">
+            
+            <input type="hidden" name="access_key" value="5bcd4c6a-1a99-4fe3-982c-dea0087315dc">
+            <input type="hidden" name="redirect" value="http://localhost:3000/employes">
+
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Votre nom</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email"><i class="fas fa-at"></i> Adresse email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="subject"><i class="fas fa-tag"></i> Sujet</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message"><i class="fas fa-comment-alt"></i> Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+    
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Envoyer
+            </button>
+        </form>
+    
+        <!-- <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <p>Message envoyé avec succès !</p>
+        </div> -->
+    </div>
+</body>
+</html>
