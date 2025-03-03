@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
     <%- include('includes/navBar.ejs') %>
-
+    <!-- <div class="entrepriseLogo">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.0y_TByRb8p4mw8fMYtVETwHaES%26pid%3DApi&f=1&ipt=ff5b0d0ba0c38873cb232422932cf20001383c4807dfc0d01583ae6b08521fd0&ipo=images" alt="Logo de l'entreprise">
+    </div> -->
     <div class="form-container">
-        <h1>Ajouter Employé</h1>
- 
+        <h1><i class="fas fa-user-plus" id="iconAjout"></i>Ajouter Employé</h1>
+
         <!-- Success/Error Message -->
         <div id="message-container" class="alert" style="display: none;"></div>
 
@@ -48,6 +49,7 @@
             </button>
         </form>
     </div>
+    <%- include('includes/_chat.ejs') %>
 
     <script src="/javascripts/addEmployee.js"></script>
 </body>

@@ -8,6 +8,9 @@ body {
     flex-direction: column;
     align-items: center;
 }
+h1{
+    color: #667eea;
+}
 
 /* Form Container */
 .form-container {
@@ -93,6 +96,50 @@ input, select {
 /* Responsive Design */
 @media (max-width: 768px) {
     .form-container {
-        width: 90%;
+        width: 52%;
+        margin-left: 80px;
     }
+
+    #editEmployeeForm{
+        width: 50%;
+    display: block;
+    text-align: center;
+    margin: auto;
+    }
+
+    input, select {
+        width: 135%;
+        padding: 3px;
+        margin-top: 0px;
+       
+        border-radius: 6px;
+        font-size: 15px;
+        margin-left: -50px;
+        
+      }
+      h1{
+        font-size: 20px;
+        width: 100%;
+
+      }
+      label{
+        font-size: 14px;
+        width: 108px;
+        margin-left: -47px;
+        margin-top: 15px;
+      }
+
+      .btn-primary{
+        margin: auto -20px;
+        width: 150px;
+        font-size: 13px;
+      }
+
+      #iconModifier{
+        font-size: 20px;
+        margin-right: 10px;
+      }
+      .chatbot-input{
+        margin-left: 50px;
+      }
 }

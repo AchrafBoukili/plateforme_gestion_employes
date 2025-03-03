@@ -1,0 +1,113 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Conteneur principal */
+.thank-you-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Image */
+.thank-you-image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+/* Titre */
+.thank-you-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Texte */
+.thank-you-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Bouton retour */
+.return-home-btn {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    color: #764ba2;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.return-home-btn i {
+    margin-right: 10px;
+}
+
+.return-home-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+#redirect-message {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0.8;
+}
+
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation de l'emoji / image */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .thank-you-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .thank-you-content p {
+        font-size: 1rem;
+    }
+
+    .return-home-btn {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+}

@@ -30,6 +30,12 @@ router.get("/employes/modifier/:id", (req, res) => {
 
 });
 
+// 
+router.get('/thank', (req, res) => {
+  res.render('thank', { 
+    title: 'Merci pour votre message!',
+  });
+});
 
 
 module.exports = router;

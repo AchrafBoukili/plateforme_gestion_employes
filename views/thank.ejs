@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/thank.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+
+    <div class="thank-you-wrapper">
+        <img src="/images/34680489_8188952.svg" alt="Remerciement" class="thank-you-image">
+        
+        <div class="thank-you-content">
+            <h1>Message envoyé avec succès !</h1>
+            <p>Nous vous répondrons dans les plus brefs délais</p>
+            <p id="redirect-message">Vous allez être redirigé vers l'accueil dans <span id="countdown">10</span> secondes...</p>
+
+            
+            <a href="/" class="return-home-btn">
+                <i class="fas fa-home"></i> Retour à l'accueil
+            </a>
+        </div>
+    </div>
+
+
+    <script >
+        document.addEventListener("DOMContentLoaded", function () {
+            let countdownElement = document.getElementById("countdown");
+            let seconds = 10; // Temps avant redirection
+        
+            let countdownInterval = setInterval(() => {
+                seconds--;
+                countdownElement.textContent = seconds;
+                
+                if (seconds <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = "/"; // redirection vers l'accueil
+                }
+            }, 1000);
+        });
+        
+    </script>
+</body>
+</html>

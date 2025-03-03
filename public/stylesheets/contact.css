@@ -13,6 +13,9 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 
 }
+.contact-header h1{
+    color: #667eea;
+}
 
 .contact-header {
     text-align: center;
@@ -20,7 +23,7 @@
 }
 
 .contact-header h1 {
-    color: #2d3748;
+    
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -103,11 +106,38 @@ input:focus, textarea:focus {
 
 @media (max-width: 768px) {
     .contact-container {
-        margin: 1rem;
-        padding: 1.5rem;
+        
+        
+        width: 54%;
+        margin-left: 100px;
     }
     
     .submit-btn {
         width: 100%;
+        font-size: 12px;
+      }
+    
+    input{
+        font-size: 14px;
+        width: 80%;
+
+    }
+
+    .contact-header h1{
+        font-size: 20px;
+    }
+    .contact-header #messageText{
+        font-size: 12px;
+    }
+    label{
+        font-size: 12px;
+        width: 108px;
+        
+        margin-top: 5px;
+       
+    }
+    #message{
+        font-size: 12px;
+        width: 80%;
     }
 }

@@ -6,12 +6,15 @@
     <title>Gestion Employés</title>
     <link rel="stylesheet" href="/stylesheets/employes.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <%- include('includes/navBar.ejs') %>
-
+    <div id="title">
+        <h1><i class="fas fa-list" id="iconList"></i>Liste des Employés</h1>
+    </div>
     <div class="form-container">
-        <h1>Liste des Employés</h1>
+        
 
         <div id="message-container" class="alert alert-success" style="display: none;"></div>
 
@@ -25,7 +28,7 @@
             <thead>
                 <tr>
                     <th>Photo</th>
-                    <th>Nom</th>
+                    <th id="nom">Nom</th>
                     <th>Ville</th>
                     <th>Email</th>
                     <th>Rôle</th>
@@ -50,8 +53,11 @@
                 }
             }
         });
+               
     </script>
 
-    <script src="/javascripts/employes.js"></script>
+    <script src="/javascripts/employes.js">
+     
+    </script>
 </body>
 </html>

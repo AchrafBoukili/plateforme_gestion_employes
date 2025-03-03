@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier Employé</title>
     <link rel="stylesheet" href="/stylesheets/editionemployes.css">
+    <link rel="stylesheet" href="/public/stylesheets/chat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <%- include('includes/navBar.ejs') %>
 
     <div class="form-container">
-        <h1>Modifier Employé</h1>
+        <h1><i class="fas fa-edit" id="iconModifier"></i>Modifier Employé</h1>
 
         <!-- Success/Error Message -->
         <div id="message-container" class="alert" style="display: none;"></div>
@@ -46,7 +47,7 @@
             </button>
         </form>
     </div>
-
+    <%- include('includes/_chat.ejs') %>
     <script src="/javascripts/editEmployee.js"></script>
 </body>
 </html>

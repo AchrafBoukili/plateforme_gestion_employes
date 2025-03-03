@@ -13,14 +13,14 @@
     <div class="contact-container">
         <div class="contact-header">
             <h1><i class="fas fa-envelope"></i> Contactez le Développeur</h1>
-            <p>Une question ou un problème ? Écrivez-moi !</p>
+            <p id="messageText">Une question ou un problème ? Écrivez-moi !</p>
         </div>
     
-        <form class="contact-form" action="https://api.web3forms.com/submit"  method="POST" id="contactForm">
-            
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
             <input type="hidden" name="access_key" value="5bcd4c6a-1a99-4fe3-982c-dea0087315dc">
-            <input type="hidden" name="redirect" value="http://localhost:3000/employes">
-
+            
+            <input type="hidden" name="redirect" value="http://localhost:3000/thank">
+            
             <div class="form-group">
                 <label for="name"><i class="fas fa-user"></i> Votre nom</label>
                 <input type="text" id="name" name="name" required>
@@ -48,10 +48,10 @@
             </button>
         </form>
     
-        <!-- <div class="success-message" id="successMessage">
+        <div class="success-message" id="successMessage">
             <i class="fas fa-check-circle"></i>
             <p>Message envoyé avec succès !</p>
-        </div> -->
+        </div>
     </div>
 </body>
 </html>
